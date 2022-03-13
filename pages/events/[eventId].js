@@ -7,7 +7,7 @@ import EventContent from "./../../components/event-detail/EventContent";
 
 import { getEventById } from "../../dummy-data";
 
-function EventDeailsPage() {
+function EventDetailsPage() {
   const router = useRouter();
 
   const eventId = router.query.eventId;
@@ -33,4 +33,4 @@ function EventDeailsPage() {
   );
 }
 
-export default EventDeailsPage;
+export default EventDetailsPage;

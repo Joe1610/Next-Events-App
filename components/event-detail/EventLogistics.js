@@ -3,15 +3,13 @@ import DateIcon from "../icons/date-icon";
 import LogisticsItem from "./LogisticsItem";
 import classes from "./EventLogistics.module.css";
 
-function EventLogistics(props) {
-  const { date, address, image, imageAlt } = props;
-
-  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
+function EventLogistics({ date, address, image, imageAlt }) {
+  const readableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
-  const addressText = address.replace(", ", "\n");
+  const formattedAddress = address.replace(", ", "\n");
 
   return (
     <section className={classes.logistics}>
@@ -20,10 +18,10 @@ function EventLogistics(props) {
       </div>
       <ul className={classes.list}>
         <LogisticsItem icon={DateIcon}>
-          <time>{humanReadableDate}</time>
+          <time>{readableDate}</time>
         </LogisticsItem>
         <LogisticsItem icon={AddressIcon}>
-          <address>{addressText}</address>
+          <address>{formattedAddress}</address>
         </LogisticsItem>
       </ul>
     </section>
